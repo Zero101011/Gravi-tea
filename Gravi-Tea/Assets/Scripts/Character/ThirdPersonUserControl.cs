@@ -53,6 +53,12 @@ using UnityStandardAssets.CrossPlatformInput;
             float v = CrossPlatformInputManager.GetAxis("Vertical");
             bool crouch = Input.GetKey(KeyCode.C);
 
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+            print("quit");
+        }
+
         // calculate move direction to pass to character
         //if (m_Cam != null)
         //{

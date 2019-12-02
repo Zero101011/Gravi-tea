@@ -838,7 +838,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 216575378}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.819, y: 2.726, z: 22.77}
+  m_LocalPosition: {x: 21.819, y: 2.894, z: 22.77}
   m_LocalScale: {x: 0.87400997, y: 0.87400997, z: 0.87400997}
   m_Children: []
   m_Father: {fileID: 575416395}
@@ -1253,8 +1253,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 349724545}
-  - component: {fileID: 349724547}
   - component: {fileID: 349724546}
+  - component: {fileID: 349724547}
   m_Layer: 0
   m_Name: BoxTrigger (6)
   m_TagString: Untagged
@@ -1293,13 +1293,11 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 349724544}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56293f85c8284d049b8a0724ee0fe120, type: 3}
+  m_Script: {fileID: 11500000, guid: 535262bbb20f34c4b8bf44bdfaa651a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Triggered: 0
-  obj: {fileID: 1502725352}
 --- !u!43 &359196312
 Mesh:
   m_ObjectHideFlags: 0
