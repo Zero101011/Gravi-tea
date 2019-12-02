@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class DoorTrigger : MonoBehaviour {
+public class menuButtons : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,11 +15,14 @@ public class DoorTrigger : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter(Collider other)
+    public void play()
     {
-        if (other.tag == "Box")
-        {
-            print("oof thats a trigger");
-        }
+        SceneManager.LoadScene(1);
     }
+
+    public void quit()
+    {
+        Application.Quit();
+    }
+
 }

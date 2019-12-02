@@ -248,7 +248,7 @@ public class GravitySwap : MonoBehaviour {
         }*/
     }
 
-    void gravityY ()
+    void gravityY()
     {
         if (Input.GetKeyDown("f"))
         {
@@ -258,7 +258,7 @@ public class GravitySwap : MonoBehaviour {
             playerRotation = (playerRotation + 90) /*% 360*/;
 
             print("Gravity INV test2");
-            flipped = true;
+            //flipped = true;
             Physics.gravity = GetCurrentGravityVector();
             gDirection = Physics.gravity;
             gDirection.Normalize();
@@ -270,17 +270,28 @@ public class GravitySwap : MonoBehaviour {
 
             //StartCoroutine("PlayerTransformRotate", previousRotation);
         }
-        else if (Input.GetKeyDown("v") && gDirection != new Vector3(0, -1, 0))
+        else
         {
-            flipped = false;
-            Physics.gravity = new Vector3(0, -9.8f, 0);
-            gDirection = Physics.gravity;
-            gDirection.Normalize();
-            player.transform.Rotate(0, 0, 180);
+            if (Input.GetKeyDown("v"))
+            {
+                // change current gravity value
+                currentGravity = (currentGravity + 3) % 4;
+                float previousRotation = playerRotation;
+                playerRotation = (playerRotation + 90) /*% 360*/;
 
-            previous = player.transform.rotation;
-            //= new Quaternion(player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z + 360, player.transform.rotation.w);
-            //StartCoroutine("PlayerTransformRotate", new Quaternion(player.transform.rotation.x, player.transform.rotation.y, 0.0f, 1.0f));
+                print("Gravity INV test2");
+                //flipped = true;
+                Physics.gravity = GetCurrentGravityVector();
+                gDirection = Physics.gravity;
+                gDirection.Normalize();
+                //playerRotate();
+
+                //player.transform.rotation = new Quaternion(player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z + 180, player.transform.rotation.w );
+                previous = player.transform.rotation;
+                TestRotR();
+
+                //StartCoroutine("PlayerTransformRotate", previousRotation);
+            }
         }
     }
 
@@ -304,6 +315,11 @@ public class GravitySwap : MonoBehaviour {
     public void TestRot()
     {
         player.transform.Rotate(0f,0f,90f,Space.World);
+    }
+
+    public void TestRotR()
+    {
+        player.transform.Rotate(0f, 0f, -90f, Space.World);
     }
 
 }
